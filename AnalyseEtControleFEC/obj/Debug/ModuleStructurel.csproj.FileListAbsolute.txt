@@ -1,0 +1,14 @@
+D:\Users\Cyril\Documents\proColExec\ProCol.exe.config
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ModuleStructurel.csproj.ResolveComReference.cache
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ProCol.exe
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ProCol.pdb
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ModuleStructurel.csprojResolveAssemblyReference.cache
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ModuleStructurel.FormFiltreÉlaboré.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ModuleStructurel.OpenFile.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ModuleStructurel.SauFormFiltreElabore.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ModuleStructurel.SauFormFiltreSimple.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ModuleStructurel.Start.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ProCol.Properties.Resources.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\ModuleStructurel\obj\Debug\ModuleStructurel.csproj.GenerateResource.Cache
+D:\Users\Cyril\Documents\proColExec\ProCol.exe
+D:\Users\Cyril\Documents\proColExec\ProCol.pdb
