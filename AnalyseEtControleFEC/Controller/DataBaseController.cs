@@ -137,6 +137,14 @@ namespace AnalyseEtControleFEC.Controller
             return result.ToArray();
         }
 
+        public String getContent(int column, int line)
+        {
+            SQLiteCommand command = new SQLiteCommand("SELECT Content FROM Content WHERE Line = @line AND Column = @column", dbConnection);
+            command.Parameters.Add(new SQLiteParameter("@line", line));
+            command.Parameters.Add(new SQLiteParameter("@column", column));
+            return (String)command.ExecuteScalar();
+        }
+
         public String[][] getAllLines()
         {
             List<String[]> result = new List<String[]>();

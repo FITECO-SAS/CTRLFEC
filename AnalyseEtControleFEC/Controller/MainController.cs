@@ -15,7 +15,7 @@ namespace AnalyseEtControleFEC.Controller
         static String configuration = "Configuration.json";
         static MainController instance;
 
-        DataBaseController dataBaseController;
+        public DataBaseController dataBaseController { get; set; }
         Configuration config;
         Start mainWindow;
 

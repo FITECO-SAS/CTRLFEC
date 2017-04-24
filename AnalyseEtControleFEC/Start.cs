@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnalyseEtControleFEC.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,7 +83,8 @@ namespace AnalyseEtControleFEC
 
         private void dataGridView1_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
-            e.Value = ;
+            MainController controller = MainController.get();
+            e.Value = controller.dataBaseController.getContent(e.ColumnIndex,e.RowIndex);
         }
 
         internal DataGridView getDataGridView()
