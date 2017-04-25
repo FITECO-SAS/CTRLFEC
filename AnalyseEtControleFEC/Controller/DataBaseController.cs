@@ -23,6 +23,7 @@ namespace AnalyseEtControleFEC.Controller
     {
         SQLiteConnection dbConnection;
         MainController mainController;
+        private int FilterNumber;
 
         /// <summary>
         /// Constructor for DataBaseController
@@ -49,13 +50,11 @@ namespace AnalyseEtControleFEC.Controller
             new SQLiteCommand("DROP TABLE IF EXISTS Content", dbConnection).ExecuteNonQuery();
             new SQLiteCommand("CREATE TABLE Column (Position INT, Name VARCHAR(20))", dbConnection).ExecuteNonQuery();
             new SQLiteCommand("CREATE TABLE Content (Line INT, Column INT, Content VARCHAR(100))", dbConnection).ExecuteNonQuery();
+            new SQLiteCommand("CREATE TEMP VIEW FinalFilter AS Select * FROM Content",dbConnection).ExecuteNonQuery();
+            FilterNumber = 0;
             //dbConnection.Close();
         }
 
-        internal SQLiteDataAdapter getDataAdapter()
-        {
-            return new SQLiteDataAdapter("SELECT * FROM Content ORDER BY Line, Column ASC",dbConnection);
-        }
 
         /// <summary>
         /// Fill the dataBase by reading an Accounting Entry File
@@ -137,12 +136,52 @@ namespace AnalyseEtControleFEC.Controller
             return result.ToArray();
         }
 
-        public String getContent(int column, int line)
+        /// <summary>
+        /// Return the content of specified column and line in the final filter view
+        /// </summary>
+        /// <param name="column">the column number</param>
+        /// <param name="line">the line number</param>
+        /// <returns>the content of the specified cell as a String</returns>
+        public String getContentFromFilter (int column, int line)
         {
-            SQLiteCommand command = new SQLiteCommand("SELECT Content FROM Content WHERE Line = @line AND Column = @column", dbConnection);
+            SQLiteCommand command = new SQLiteCommand("SELECT Content FROM FinalFilter LIMIT 1 OFFSET @line WHERE Column = @column", dbConnection);
             command.Parameters.Add(new SQLiteParameter("@line", line));
             command.Parameters.Add(new SQLiteParameter("@column", column));
             return (String)command.ExecuteScalar();
+        }
+
+        /// <summary>
+        /// Add a filter using the restriction parameter for adding ORDER BY or WHERE clause
+        /// </summary>
+        /// <param name="restriction">String representing the clauses for the filter, must contains ORDER BY and/or WHERE clause</param>
+        public void AddFilter (String restriction)
+        {
+            SQLiteCommand filter;
+            if (FilterNumber == 0)
+            {
+                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Content"+restriction,dbConnection);
+            }
+            else
+            {
+                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Filter" + (FilterNumber - 1) + restriction,dbConnection);
+            }
+            filter.ExecuteNonQuery();
+            new SQLiteCommand("DROP VIEW FinalFilter", dbConnection).ExecuteNonQuery();
+            new SQLiteCommand("CREATE TEMP VIEW FinalFilter AS SELECT * FROM Filter"+FilterNumber, dbConnection).ExecuteNonQuery();
+            FilterNumber++;
+        }
+
+        /// <summary>
+        /// Delete all filters created with the AddFilter function
+        /// </summary>
+        public void DeleteAllFilters()
+        {
+            for(;FilterNumber > 0; FilterNumber--)
+            {
+                new SQLiteCommand("DROP VIEW Filter"+(FilterNumber-1), dbConnection).ExecuteNonQuery();
+            }
+            new SQLiteCommand("DROP VIEW FinalFilter", dbConnection).ExecuteNonQuery();
+            new SQLiteCommand("CREATE TEMP VIEW FinalFilter AS Select * FROM Content", dbConnection).ExecuteNonQuery();
         }
 
         public String[][] getAllLines()
@@ -180,8 +219,16 @@ namespace AnalyseEtControleFEC.Controller
             return result;
         }
 
+        public int getNumberOfLinesInFilter()
+        {
+            //dbConnection.Open();
+            int result = Convert.ToInt32(new SQLiteCommand("SELECT count(*) FROM FinalFilter GROUP BY Column", dbConnection).ExecuteScalar());
+            //dbConnection.Close();
+            return result;
+        }
+
         /// <summary>
-        /// this method is used for regex verification using LIKE for each content member of the sepecified column
+        /// this method is used for regex verification using REGEXP for each content member of the specified column
         /// </summary>
         /// <param name="column">the  column number we want to check</param>
         /// <param name="regex">the regex we want to use</param>

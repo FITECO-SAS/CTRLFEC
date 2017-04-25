@@ -84,7 +84,7 @@ namespace AnalyseEtControleFEC
         private void dataGridView1_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
             MainController controller = MainController.get();
-            e.Value = controller.dataBaseController.getContent(e.ColumnIndex,e.RowIndex);
+            e.Value = controller.dataBaseController.getContentFromFilter(e.ColumnIndex,e.RowIndex);
         }
 
         internal DataGridView getDataGridView()

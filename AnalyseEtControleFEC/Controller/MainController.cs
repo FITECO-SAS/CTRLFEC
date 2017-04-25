@@ -66,7 +66,7 @@ namespace AnalyseEtControleFEC.Controller
             //dataAdapter.Fill(dataSet);
             //gridView.DataSource = dataAdapter;
             String[] Columns = dataBaseController.getColumnNames();
-            int size = dataBaseController.getNumberOfLines();
+            int size = dataBaseController.getNumberOfLinesInFilter();
             /*for (int i=0; i<size ; i++)
             {
                 content.Add(dataBaseController.getLine(i));
