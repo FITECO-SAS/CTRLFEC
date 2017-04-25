@@ -144,7 +144,7 @@ namespace AnalyseEtControleFEC.Controller
         /// <returns>the content of the specified cell as a String</returns>
         public String getContentFromFilter (int column, int line)
         {
-            SQLiteCommand command = new SQLiteCommand("SELECT Content FROM FinalFilter LIMIT 1 OFFSET @line WHERE Column = @column", dbConnection);
+            SQLiteCommand command = new SQLiteCommand("SELECT Content FROM FinalFilter WHERE Column = @column LIMIT 1 OFFSET @line", dbConnection);
             command.Parameters.Add(new SQLiteParameter("@line", line));
             command.Parameters.Add(new SQLiteParameter("@column", column));
             return (String)command.ExecuteScalar();
