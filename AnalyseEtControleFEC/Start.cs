@@ -125,7 +125,6 @@ namespace AnalyseEtControleFEC
             }
         }
 
-<<<<<<< HEAD
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (field1ComboBox.SelectedItem.ToString().ToUpper().Contains("DATE") || field1ComboBox.SelectedItem.ToString().ToUpper().Contains("NUM") ||
@@ -157,14 +156,14 @@ namespace AnalyseEtControleFEC
         {
             MainController controller = MainController.get();
             e.Value = controller.dataBaseController.getContentFromFilter(e.ColumnIndex, e.RowIndex);
-=======
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             ExportFile exportFile = new ExportFile();
             //exportFile.ExportDataGridviewToWord(dataGridView1, true);
             //exportFile.ExportDataGridviewToExcel(dataGridView1, true);
             exportFile.ExportToCsv(dataGridView1);
->>>>>>> 2c926aa823f4189846f26098ec98b922cf96ee44
         }
     }
 }

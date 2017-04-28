@@ -748,11 +748,8 @@ namespace AnalyseEtControleFEC
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-<<<<<<< HEAD
             this.tabPage2.Size = new System.Drawing.Size(1802, 958);
-=======
             this.tabPage2.Size = new System.Drawing.Size(1802, 896);
->>>>>>> 2c926aa823f4189846f26098ec98b922cf96ee44
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -773,11 +770,8 @@ namespace AnalyseEtControleFEC
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-<<<<<<< HEAD
             this.tabPage3.Size = new System.Drawing.Size(1802, 958);
-=======
             this.tabPage3.Size = new System.Drawing.Size(1802, 896);
->>>>>>> 2c926aa823f4189846f26098ec98b922cf96ee44
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -798,13 +792,10 @@ namespace AnalyseEtControleFEC
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1682, 1017);
-=======
             this.ClientSize = new System.Drawing.Size(1682, 953);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
->>>>>>> 2c926aa823f4189846f26098ec98b922cf96ee44
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.treeView1);
@@ -902,11 +893,8 @@ namespace AnalyseEtControleFEC
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-<<<<<<< HEAD
         private DataGridView dataGridView2;
-=======
         private Button button3;
->>>>>>> 2c926aa823f4189846f26098ec98b922cf96ee44
     }
 }
 
