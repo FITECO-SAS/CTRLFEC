@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-//using Word = Microsoft.Office.Interop.Word;
-//using Excel = Microsoft.Office.Interop.Excel;
+using Word = Microsoft.Office.Interop.Word;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace AnalyseEtControleFEC
 {
     class ExportFile
     {
-        /*public bool ExportDataGridviewToWord(DataGridView dgv, bool isShowWord)
+        public bool ExportDataGridviewToWord(DataGridView dgv, bool isShowWord)
         {
             Word.Document mydoc = new Word.Document();
             Word.Table mytable;//declare a table in word
@@ -71,6 +72,37 @@ namespace AnalyseEtControleFEC
                 }
             }
             return true;
-        }*/
+        }
+        public void ExportToCsv(DataGridView dgv)
+        {
+            string delimiter = ",";
+            string filename = "csv.csv";
+            string fullFilename = Path.Combine(@"G:\", filename);
+
+            StreamWriter csvStreamWriter = new StreamWriter(fullFilename, false, System.Text.Encoding.UTF8);
+
+            //output header data
+            string strHeader = "";
+            for (int i = 0; i < dgv.Columns.Count; i++)
+            {
+                strHeader += dgv.Columns[i].HeaderText + delimiter;
+            }
+            csvStreamWriter.WriteLine(strHeader);
+
+            //output rows data
+            for (int j = 0; j < dgv.Rows.Count; j++)
+            {
+                string strRowValue = "";
+
+                for (int k = 0; k < dgv.Columns.Count; k++)
+                {
+                    strRowValue += dgv.Rows[j].Cells[k].Value + delimiter;
+
+                }
+                csvStreamWriter.WriteLine(strRowValue);
+            }
+
+            csvStreamWriter.Close();
+        }
     }
 }

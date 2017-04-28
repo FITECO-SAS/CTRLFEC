@@ -100,5 +100,13 @@ namespace AnalyseEtControleFEC
                 panel1.Visible = true;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ExportFile exportFile = new ExportFile();
+            //exportFile.ExportDataGridviewToWord(dataGridView1, true);
+            //exportFile.ExportDataGridviewToExcel(dataGridView1, true);
+            exportFile.ExportToCsv(dataGridView1);
+        }
     }
 }
