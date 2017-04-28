@@ -12,3 +12,20 @@ C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\AnalyseEtControleFEC
 C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProCol\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csproj.GenerateResource.Cache
 D:\Users\Cyril\Documents\proColExec\ProCol.exe
 D:\Users\Cyril\Documents\proColExec\ProCol.pdb
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\Interop.ACTIVEXLib.dll
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csproj.ResolveComReference.cache
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.exe
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.pdb
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\bin\Debug\ProCol.exe.config
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csprojResolveAssemblyReference.cache
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.FormFiltreÉlaboré.resources
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.OpenFile.resources
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.SauFormFiltreElabore.resources
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.SauFormFiltreSimple.resources
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.Start.resources
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.Properties.Resources.resources
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csproj.GenerateResource.Cache
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\bin\Debug\ProCol.exe
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\bin\Debug\ProCol.pdb
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\WRJ\Documents\Visual Studio 2015\Projects\CTRLFEC\AnalyseEtControleFEC\bin\Debug\Newtonsoft.Json.xml
