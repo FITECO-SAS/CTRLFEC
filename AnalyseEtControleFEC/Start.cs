@@ -185,5 +185,25 @@ namespace AnalyseEtControleFEC
                 "Ne commence pas par","Se termine par","Ne se termine pas par","Est égal à","Est différent de" });
             }
         }
+
+        String transformComboBoxValueToCommand(String operation, String content)
+        {
+            switch (operation)
+            {
+                case "Contient": return " LIKE '%" + content + "%'";
+                case "Ne contient pas": return " NOT LIKE '%" + content + "%'";
+                case "Commence par": return " LIKE '%" + content+"'";
+                case "Ne commence pas par": return " NOT LIKE '%" + content + "'";
+                case "Se termine par": return " LIKE '" + content + "%'";
+                case "Ne se termine pas par": return " NOT LIKE '" + content + "%'";
+                case "Est égal à": return " = '" + content + "'";
+                case "Est différent de": return " != '" + content + "'";
+                case "Est supérieur à": return " > '" + content + "'";
+                case "Est supérieur ou égal à": return " >= '" + content + "'";
+                case "Est inférieur à": return " < '" + content + "'";
+                case "Est inférieur ou égal à": return " <= '" + content + "'";
+                default: return "";
+            }
+        }
     }
 }

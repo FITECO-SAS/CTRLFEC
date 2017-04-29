@@ -78,14 +78,14 @@ namespace AnalyseEtControleFEC
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.orRadioButton3 = new System.Windows.Forms.RadioButton();
+            this.andRadioButton3 = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.orRadioButton2 = new System.Windows.Forms.RadioButton();
+            this.andRadioButton2 = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.andRadioButton1 = new System.Windows.Forms.RadioButton();
+            this.orRadioButton1 = new System.Windows.Forms.RadioButton();
             this.value4TextBox = new System.Windows.Forms.TextBox();
             this.value3TextBox = new System.Windows.Forms.TextBox();
             this.value2TextBox = new System.Windows.Forms.TextBox();
@@ -434,90 +434,90 @@ namespace AnalyseEtControleFEC
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.radioButton8);
-            this.panel5.Controls.Add(this.radioButton7);
+            this.panel5.Controls.Add(this.orRadioButton3);
+            this.panel5.Controls.Add(this.andRadioButton3);
             this.panel5.Location = new System.Drawing.Point(4, 333);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(103, 27);
             this.panel5.TabIndex = 18;
             // 
-            // radioButton8
+            // orRadioButton3
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(62, 5);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(17, 16);
-            this.radioButton8.TabIndex = 1;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.orRadioButton3.AutoSize = true;
+            this.orRadioButton3.Location = new System.Drawing.Point(62, 5);
+            this.orRadioButton3.Name = "orRadioButton3";
+            this.orRadioButton3.Size = new System.Drawing.Size(17, 16);
+            this.orRadioButton3.TabIndex = 1;
+            this.orRadioButton3.TabStop = true;
+            this.orRadioButton3.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // andRadioButton3
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(19, 5);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(17, 16);
-            this.radioButton7.TabIndex = 0;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.andRadioButton3.AutoSize = true;
+            this.andRadioButton3.Location = new System.Drawing.Point(19, 5);
+            this.andRadioButton3.Name = "andRadioButton3";
+            this.andRadioButton3.Size = new System.Drawing.Size(17, 16);
+            this.andRadioButton3.TabIndex = 0;
+            this.andRadioButton3.TabStop = true;
+            this.andRadioButton3.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.radioButton6);
-            this.panel4.Controls.Add(this.radioButton5);
+            this.panel4.Controls.Add(this.orRadioButton2);
+            this.panel4.Controls.Add(this.andRadioButton2);
             this.panel4.Location = new System.Drawing.Point(4, 255);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(103, 27);
             this.panel4.TabIndex = 17;
             // 
-            // radioButton6
+            // orRadioButton2
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(62, 4);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(17, 16);
-            this.radioButton6.TabIndex = 1;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.orRadioButton2.AutoSize = true;
+            this.orRadioButton2.Location = new System.Drawing.Point(62, 4);
+            this.orRadioButton2.Name = "orRadioButton2";
+            this.orRadioButton2.Size = new System.Drawing.Size(17, 16);
+            this.orRadioButton2.TabIndex = 1;
+            this.orRadioButton2.TabStop = true;
+            this.orRadioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // andRadioButton2
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(19, 4);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(17, 16);
-            this.radioButton5.TabIndex = 0;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.andRadioButton2.AutoSize = true;
+            this.andRadioButton2.Location = new System.Drawing.Point(19, 4);
+            this.andRadioButton2.Name = "andRadioButton2";
+            this.andRadioButton2.Size = new System.Drawing.Size(17, 16);
+            this.andRadioButton2.TabIndex = 0;
+            this.andRadioButton2.TabStop = true;
+            this.andRadioButton2.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.radioButton3);
-            this.panel3.Controls.Add(this.radioButton4);
+            this.panel3.Controls.Add(this.andRadioButton1);
+            this.panel3.Controls.Add(this.orRadioButton1);
             this.panel3.Location = new System.Drawing.Point(4, 177);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(103, 27);
             this.panel3.TabIndex = 16;
             // 
-            // radioButton3
+            // andRadioButton1
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(19, 6);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(17, 16);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.andRadioButton1.AutoSize = true;
+            this.andRadioButton1.Location = new System.Drawing.Point(19, 6);
+            this.andRadioButton1.Name = "andRadioButton1";
+            this.andRadioButton1.Size = new System.Drawing.Size(17, 16);
+            this.andRadioButton1.TabIndex = 0;
+            this.andRadioButton1.TabStop = true;
+            this.andRadioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // orRadioButton1
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(62, 6);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(17, 16);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.orRadioButton1.AutoSize = true;
+            this.orRadioButton1.Location = new System.Drawing.Point(62, 6);
+            this.orRadioButton1.Name = "orRadioButton1";
+            this.orRadioButton1.Size = new System.Drawing.Size(17, 16);
+            this.orRadioButton1.TabIndex = 0;
+            this.orRadioButton1.TabStop = true;
+            this.orRadioButton1.UseVisualStyleBackColor = true;
             // 
             // value4TextBox
             // 
@@ -865,14 +865,14 @@ namespace AnalyseEtControleFEC
         private Label label5;
         private Label label4;
         private Panel panel5;
-        private RadioButton radioButton8;
-        private RadioButton radioButton7;
+        private RadioButton orRadioButton3;
+        private RadioButton andRadioButton3;
         private Panel panel4;
-        private RadioButton radioButton6;
-        private RadioButton radioButton5;
+        private RadioButton orRadioButton2;
+        private RadioButton andRadioButton2;
         private Panel panel3;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
+        private RadioButton andRadioButton1;
+        private RadioButton orRadioButton1;
         private TextBox value4TextBox;
         private TextBox value3TextBox;
         private TextBox value2TextBox;
