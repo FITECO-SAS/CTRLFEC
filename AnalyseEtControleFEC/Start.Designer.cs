@@ -574,6 +574,7 @@ namespace AnalyseEtControleFEC
             this.field4ComboBox.Name = "field4ComboBox";
             this.field4ComboBox.Size = new System.Drawing.Size(138, 24);
             this.field4ComboBox.TabIndex = 10;
+            this.field4ComboBox.SelectedIndexChanged += new System.EventHandler(this.field4ComboBox_SelectedIndexChanged);
             // 
             // field3ComboBox
             // 
@@ -602,6 +603,7 @@ namespace AnalyseEtControleFEC
             this.field3ComboBox.Name = "field3ComboBox";
             this.field3ComboBox.Size = new System.Drawing.Size(138, 24);
             this.field3ComboBox.TabIndex = 9;
+            this.field3ComboBox.SelectedIndexChanged += new System.EventHandler(this.field3ComboBox_SelectedIndexChanged);
             // 
             // field2ComboBox
             // 
@@ -630,6 +632,7 @@ namespace AnalyseEtControleFEC
             this.field2ComboBox.Name = "field2ComboBox";
             this.field2ComboBox.Size = new System.Drawing.Size(138, 24);
             this.field2ComboBox.TabIndex = 8;
+            this.field2ComboBox.SelectedIndexChanged += new System.EventHandler(this.field2ComboBox_SelectedIndexChanged);
             // 
             // field1ComboBox
             // 
@@ -749,7 +752,6 @@ namespace AnalyseEtControleFEC
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1802, 958);
-            this.tabPage2.Size = new System.Drawing.Size(1802, 896);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -771,7 +773,6 @@ namespace AnalyseEtControleFEC
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1802, 958);
-            this.tabPage3.Size = new System.Drawing.Size(1802, 896);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -792,10 +793,8 @@ namespace AnalyseEtControleFEC
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1682, 1017);
             this.ClientSize = new System.Drawing.Size(1682, 953);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.treeView1);

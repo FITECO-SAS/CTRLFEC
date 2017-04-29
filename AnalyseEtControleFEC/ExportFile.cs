@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using Word = Microsoft.Office.Interop.Word;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Word = Microsoft.Office.Interop.Word;
+//using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 
 namespace AnalyseEtControleFEC
 {
     class ExportFile
     {
-        public bool ExportDataGridviewToWord(DataGridView dgv, bool isShowWord)
+        /*public bool ExportDataGridviewToWord(DataGridView dgv, bool isShowWord)
         {
             Word.Document mydoc = new Word.Document();
             Word.Table mytable;//declare a table in word
@@ -72,7 +72,7 @@ namespace AnalyseEtControleFEC
                 }
             }
             return true;
-        }
+        }*/
         public void ExportToCsv(DataGridView dgv)
         {
             string delimiter = ",";
