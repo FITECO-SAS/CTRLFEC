@@ -16,6 +16,7 @@ namespace AnalyseEtControleFEC.Controller
         static MainController instance;
 
         public DataBaseController dataBaseController { get; set; }
+        public SimpleFilterController simpleFilterController { get; set; }
         Configuration config;
         Start mainWindow;
 
@@ -30,12 +31,18 @@ namespace AnalyseEtControleFEC.Controller
         private MainController()
         {
             dataBaseController = new DataBaseController(dataBaseFile,this);
+            simpleFilterController = new SimpleFilterController(dataBaseController);
             config = new Configuration(configuration);
         }
 
         public DataBaseController getDataBaseController()
         {
             return dataBaseController;
+        }
+
+        public SimpleFilterController getSimpleFilterController()
+        {
+            return simpleFilterController;
         }
 
         public void start()

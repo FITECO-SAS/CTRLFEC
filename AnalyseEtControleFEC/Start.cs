@@ -118,12 +118,12 @@ namespace AnalyseEtControleFEC
                 "Ne commence pas par","Se termine par","Ne se termine pas par","Est égal à","Est différent de" });
             }
         }
-        private void dataGridView2_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        /*private void dataGridView2_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
             MainController controller = MainController.get();
             e.Value = controller.dataBaseController.getContentFromFilter(e.ColumnIndex, e.RowIndex);
         }
-
+        */
         private void button3_Click(object sender, EventArgs e)
         {
             ExportFile exportFile = new ExportFile();
@@ -186,24 +186,40 @@ namespace AnalyseEtControleFEC
             }
         }
 
-        String transformComboBoxValueToCommand(String operation, String content)
+        /*String radioButtonString(RadioButton andRadioButton, RadioButton orRadioButton)
         {
-            switch (operation)
+            if (andRadioButton.Checked)
             {
-                case "Contient": return " LIKE '%" + content + "%'";
-                case "Ne contient pas": return " NOT LIKE '%" + content + "%'";
-                case "Commence par": return " LIKE '%" + content+"'";
-                case "Ne commence pas par": return " NOT LIKE '%" + content + "'";
-                case "Se termine par": return " LIKE '" + content + "%'";
-                case "Ne se termine pas par": return " NOT LIKE '" + content + "%'";
-                case "Est égal à": return " = '" + content + "'";
-                case "Est différent de": return " != '" + content + "'";
-                case "Est supérieur à": return " > '" + content + "'";
-                case "Est supérieur ou égal à": return " >= '" + content + "'";
-                case "Est inférieur à": return " < '" + content + "'";
-                case "Est inférieur ou égal à": return " <= '" + content + "'";
-                default: return "";
+                return "AND";
             }
+            else
+            {
+                if (orRadioButton.Checked)
+                {
+                    return "OR";
+                }
+                else return "";
+            }
+        }*/
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainController controller = MainController.get();
+            string finalWhereClause = "";
+            if (field1ComboBox.SelectedItem.ToString().ToUpper().Contains("DATE") || field1ComboBox.SelectedItem.ToString().ToUpper().Contains("NUM") ||
+                field1ComboBox.SelectedItem.ToString().ToUpper().Contains("DEBIT") || field1ComboBox.SelectedItem.ToString().ToUpper().Contains("CREDIT"))
+            {
+                finalWhereClause = controller.simpleFilterController.NumericOrDateSimpleFilter(field1ComboBox.SelectedItem.ToString(),
+                condition1ComboBox.SelectedItem.ToString(), value1TextBox.Text);
+            }
+            else
+            {
+                finalWhereClause = controller.simpleFilterController.TextSimpleFilter(field1ComboBox.SelectedItem.ToString(),
+                condition1ComboBox.SelectedItem.ToString(), value1TextBox.Text);
+            }
+            Console.WriteLine(finalWhereClause);
+            // Si l'on décommente cette ligne, le résultat de mon test devrai apparaitre mais une erreur apparaît dans le traitement de DataBaseControler.
+            //controller.dataBaseController.AddFilter(finalWhereClause);
         }
     }
 }
