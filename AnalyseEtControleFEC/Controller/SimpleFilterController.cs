@@ -35,7 +35,7 @@ namespace AnalyseEtControleFEC.Controller
 
         public void SimpleFilterStatementController(string[] colums, string[] whereClause, bool[] isOr)
         {
-            string finalWhereClause = "WHERE ";
+            string finalWhereClause = " WHERE ";
             for (int i = 0; i < whereClause.Length; i++)
             {
                 finalWhereClause += whereClause[i] + " ";
@@ -60,7 +60,7 @@ namespace AnalyseEtControleFEC.Controller
                     columnNameInDb = i.ToString();
             }
 
-            string result = "WHERE Column = " + columnNameInDb;
+            string result = " WHERE Column = " + columnNameInDb;
             switch (typeFilter)
             {
                 case "Est supérieur à":
@@ -91,7 +91,7 @@ namespace AnalyseEtControleFEC.Controller
                     columnNameInDb = i.ToString();
             }
 
-            string result = "WHERE Column = " + columnNameInDb;
+            string result = " WHERE Column = " + columnNameInDb;
             switch (typeFilter)
             {
                 case "Contient":
