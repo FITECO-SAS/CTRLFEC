@@ -159,11 +159,11 @@ namespace AnalyseEtControleFEC.Controller
             SQLiteCommand filter;
             if (FilterNumber == 0)
             {
-                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Content"+restriction,dbConnection);
+                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Content base "+restriction,dbConnection);
             }
             else
             {
-                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Filter" + (FilterNumber - 1) + restriction,dbConnection);
+                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Filter" + (FilterNumber - 1) + " base " + restriction,dbConnection);
             }
             filter.ExecuteNonQuery();
             new SQLiteCommand("DROP VIEW FinalFilter", dbConnection).ExecuteNonQuery();
