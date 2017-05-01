@@ -46,3 +46,16 @@ C:\Users\Pierre\Documents\CTRLFEC\AnalyseEtControleFEC\bin\Debug\ProCol.exe
 C:\Users\Pierre\Documents\CTRLFEC\AnalyseEtControleFEC\bin\Debug\ProCol.pdb
 C:\Users\Pierre\Documents\CTRLFEC\AnalyseEtControleFEC\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Pierre\Documents\CTRLFEC\AnalyseEtControleFEC\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csprojResolveAssemblyReference.cache
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\Interop.ACTIVEXLib.dll
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csproj.ResolveComReference.cache
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.FormFiltreÉlaboré.resources
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.OpenFile.resources
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.SauFormFiltreElabore.resources
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.SauFormFiltreSimple.resources
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.Start.resources
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.Properties.Resources.resources
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csproj.GenerateResource.Cache
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.exe
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.pdb
+C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\bin\Debug\ProCol.exe.config
