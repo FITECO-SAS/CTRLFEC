@@ -178,7 +178,7 @@ namespace AnalyseEtControleFEC
             // filtrerToolStripMenuItem
             // 
             this.filtrerToolStripMenuItem.Name = "filtrerToolStripMenuItem";
-            this.filtrerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.filtrerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.filtrerToolStripMenuItem.Text = "Filtrer";
             // 
             // trierToolStripMenuItem
@@ -187,7 +187,7 @@ namespace AnalyseEtControleFEC
             this.mesFiltresSimplesToolStripMenuItem,
             this.mesFiltresÉlaborésToolStripMenuItem});
             this.trierToolStripMenuItem.Name = "trierToolStripMenuItem";
-            this.trierToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.trierToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.trierToolStripMenuItem.Text = "Trier";
             // 
             // mesFiltresSimplesToolStripMenuItem
@@ -205,14 +205,15 @@ namespace AnalyseEtControleFEC
             // sélectionnerToolStripMenuItem
             // 
             this.sélectionnerToolStripMenuItem.Name = "sélectionnerToolStripMenuItem";
-            this.sélectionnerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.sélectionnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sélectionnerToolStripMenuItem.Text = "Sélectionner";
             // 
             // analyserToolStripMenuItem
             // 
             this.analyserToolStripMenuItem.Name = "analyserToolStripMenuItem";
-            this.analyserToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.analyserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.analyserToolStripMenuItem.Text = "Analyser";
+            this.analyserToolStripMenuItem.Click += new System.EventHandler(this.analyserToolStripMenuItem_Click);
             // 
             // declarationsToolStripMenuItem
             // 

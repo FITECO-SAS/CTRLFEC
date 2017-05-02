@@ -91,5 +91,10 @@ namespace AnalyseEtControleFEC
         {
             return dataGridView1;
         }
+
+        private void analyserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainController.get().analyzeData();
+        }
     }
 }
