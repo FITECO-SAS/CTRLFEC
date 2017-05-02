@@ -47,7 +47,7 @@ namespace AnalyseEtControleFEC.Controller
                         finalWhereClause += "AND ";
                 }
             }
-            dataBaseController.AddFilter(finalWhereClause);
+            dataBaseController.AddFilterAdd(finalWhereClause);
         }
         public string NumericOrDateSimpleFilter(string column, string typeFilter, string value)
         {

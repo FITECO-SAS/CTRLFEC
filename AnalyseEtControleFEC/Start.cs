@@ -205,26 +205,83 @@ namespace AnalyseEtControleFEC
             }
         }*/
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addFilter(int lastTabId, bool isOr, String field, String condition, String value)
         {
             MainController controller = MainController.get();
             string finalWhereClause = "";
-            if (field1ComboBox.SelectedItem.ToString().ToUpper().Contains("DATE") || field1ComboBox.SelectedItem.ToString().ToUpper().Contains("NUM") ||
-                field1ComboBox.SelectedItem.ToString().ToUpper().Contains("DEBIT") || field1ComboBox.SelectedItem.ToString().ToUpper().Contains("CREDIT"))
+            if (field.ToUpper().Contains("DATE") || field.ToUpper().Contains("NUM") ||
+                field.ToUpper().Contains("DEBIT") || field.ToUpper().Contains("CREDIT"))
             {
-                finalWhereClause = controller.simpleFilterController.NumericOrDateSimpleFilter(field1ComboBox.SelectedItem.ToString(),
-                condition1ComboBox.SelectedItem.ToString(), value1TextBox.Text);
+                finalWhereClause = controller.simpleFilterController.NumericOrDateSimpleFilter(field, condition, value);
             }
             else
             {
-                finalWhereClause = controller.simpleFilterController.TextSimpleFilter(field1ComboBox.SelectedItem.ToString(),
-                condition1ComboBox.SelectedItem.ToString(), value1TextBox.Text);
+                finalWhereClause = controller.simpleFilterController.TextSimpleFilter(field, condition, value);
             }
-            Console.WriteLine(finalWhereClause);
-            // Si l'on décommente cette ligne, le résultat de mon test devrai apparaitre mais une erreur apparaît dans le traitement de DataBaseControler.
+            if (isOr)
+            {
+                controller.dataBaseController.AddFilterOr(finalWhereClause, lastTabId);
+            }
+            else
+            {
+                controller.dataBaseController.AddFilterAdd(finalWhereClause);
+            }
+        }
+
+        private void reinitializeFilterForm()
+        {
+            andRadioButton1.Checked = false;
+            orRadioButton1.Checked = false;
+            andRadioButton2.Checked = false;
+            orRadioButton2.Checked = false;
+            andRadioButton3.Checked = false;
+            orRadioButton3.Checked = false;
+            field1ComboBox.Text = "";
+            condition1ComboBox.Text = "";
+            value1TextBox.Text = "";
+            field2ComboBox.Text = "";
+            condition2ComboBox.Text = "";
+            value2TextBox.Text = "";
+            field3ComboBox.Text = "";
+            condition3ComboBox.Text = "";
+            value3TextBox.Text = "";
+            field4ComboBox.Text = "";
+            condition4ComboBox.Text = "";
+            value4TextBox.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainController controller = MainController.get();
+            int filterIdOfLastTab = controller.getDataBaseController().getLastFilterId();
+            addFilter(filterIdOfLastTab, false, field1ComboBox.SelectedItem.ToString(), condition1ComboBox.SelectedItem.ToString(), value1TextBox.Text);
+            if (andRadioButton1.Checked)
+            {
+                addFilter(filterIdOfLastTab, false, field2ComboBox.SelectedItem.ToString(), condition2ComboBox.SelectedItem.ToString(), value2TextBox.Text);
+            }
+            else if (orRadioButton1.Checked)
+            {
+                addFilter(filterIdOfLastTab, true, field2ComboBox.SelectedItem.ToString(), condition2ComboBox.SelectedItem.ToString(), value2TextBox.Text);
+            }
+            if (andRadioButton2.Checked)
+            {
+                addFilter(filterIdOfLastTab, false, field3ComboBox.SelectedItem.ToString(), condition3ComboBox.SelectedItem.ToString(), value3TextBox.Text);
+            }
+            else if (orRadioButton2.Checked)
+            {
+                addFilter(filterIdOfLastTab, true, field3ComboBox.SelectedItem.ToString(), condition3ComboBox.SelectedItem.ToString(), value3TextBox.Text);
+            }
+            if (andRadioButton3.Checked)
+            {
+                addFilter(filterIdOfLastTab, false, field4ComboBox.SelectedItem.ToString(), condition4ComboBox.SelectedItem.ToString(), value4TextBox.Text);
+            }
+            else if (orRadioButton3.Checked)
+            {
+                addFilter(filterIdOfLastTab, true, field4ComboBox.SelectedItem.ToString(), condition4ComboBox.SelectedItem.ToString(), value4TextBox.Text);
+            }
+            reinitializeFilterForm();
             string title = "tabPage" + (tabControl1.TabCount + 1).ToString();
             TabPage myTabPage = new TabPage(title);
-            controller.dataBaseController.AddFilter(finalWhereClause);
             DataGridViewBDD newDataGridView = new DataGridViewBDD(controller.getDataBaseController().getLastFilterId());
             newDataGridView.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(dataGridView1_CellValueNeeded);
             newDataGridView.Size = dataGridView1.Size;

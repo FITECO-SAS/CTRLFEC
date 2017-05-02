@@ -170,7 +170,7 @@ namespace AnalyseEtControleFEC.Controller
         /// Add a filter using the restriction parameter for adding ORDER BY or WHERE clause
         /// </summary>
         /// <param name="restriction">String representing the clauses for the filter, must contains ORDER BY and/or WHERE clause</param>
-        public void AddFilter (String restriction)
+        public void AddFilterAdd (String restriction)
         {
             SQLiteCommand filter;
             SQLiteCommand columnNum;
@@ -186,6 +186,28 @@ namespace AnalyseEtControleFEC.Controller
                 columnNum.ExecuteNonQuery();
                 filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Line, Column, Content FROM Filter" + (FilterNumber - 1) + " base WHERE Line IN (SELECT Line FROM ColumnNum" + FilterNumber + ")", dbConnection);
             }
+            filter.ExecuteNonQuery();
+            new SQLiteCommand("DROP VIEW FinalFilter", dbConnection).ExecuteNonQuery();
+            new SQLiteCommand("CREATE TEMP VIEW FinalFilter AS SELECT * FROM Filter" + FilterNumber, dbConnection).ExecuteNonQuery();
+            FilterNumber++;
+        }
+
+        public void AddFilterOr(String restriction, int lastTabId)
+        {
+            SQLiteCommand filter;
+            SQLiteCommand columnNum;
+            String lastTab;
+            if(lastTabId == -1)
+            {
+                lastTab = "Content";
+            }
+            else
+            {
+                lastTab = "Filter" + lastTabId;
+            }
+            columnNum = new SQLiteCommand("CREATE TEMP VIEW ColumnNum" + FilterNumber + " AS SELECT DISTINCT Line FROM Content base " + restriction, dbConnection);
+            columnNum.ExecuteNonQuery();
+            filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Line, Column, Content FROM "+lastTab+" base WHERE Line IN (SELECT Line FROM ColumnNum" + FilterNumber + ") OR Line IN (SELECT Line FROM ColumnNum" + (FilterNumber-1) + ")", dbConnection);
             filter.ExecuteNonQuery();
             new SQLiteCommand("DROP VIEW FinalFilter", dbConnection).ExecuteNonQuery();
             new SQLiteCommand("CREATE TEMP VIEW FinalFilter AS SELECT * FROM Filter" + FilterNumber, dbConnection).ExecuteNonQuery();
