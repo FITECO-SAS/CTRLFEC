@@ -220,6 +220,7 @@ namespace AnalyseEtControleFEC
             Console.WriteLine(finalWhereClause);
             // Si l'on décommente cette ligne, le résultat de mon test devrai apparaitre mais une erreur apparaît dans le traitement de DataBaseControler.
             controller.dataBaseController.AddFilter(finalWhereClause);
+            controller.updateView();
         }
     }
 }

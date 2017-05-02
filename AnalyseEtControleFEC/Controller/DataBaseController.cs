@@ -151,19 +151,19 @@ namespace AnalyseEtControleFEC.Controller
         }
 
         /// <summary>
-        /// Add a filter using the restriction parameter for adding ORDER BY or WHERE clause
+        /// Add a filter using the restriction parameter for adding  WHERE clause
         /// </summary>
-        /// <param name="restriction">String representing the clauses for the filter, must contains ORDER BY and/or WHERE clause</param>
+        /// <param name="restriction">String representing the clauses for the filter, must contains WHERE clause</param>
         public void AddFilter (String restriction)
         {
             SQLiteCommand filter;
             if (FilterNumber == 0)
             {
-                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Content base "+restriction,dbConnection);
+                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " (Content,Line,Column) AS SELECT a.Content,a.Line,a.Column FROM Content a INNER JOIN Content b ON a.Line = b.Line AND"+restriction,dbConnection);
             }
             else
             {
-                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Filter" + (FilterNumber - 1) + " base " + restriction,dbConnection);
+                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " (Content,Line,Column) AS SELECT a.Content,a.Line,a.Column FROM Filter" + (FilterNumber - 1) + " a INNER JOIN Content b ON a.Line = b.Line AND" + restriction, dbConnection);
             }
             filter.ExecuteNonQuery();
             new SQLiteCommand("DROP VIEW FinalFilter", dbConnection).ExecuteNonQuery();

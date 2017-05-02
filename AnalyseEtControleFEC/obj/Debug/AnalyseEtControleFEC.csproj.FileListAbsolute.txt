@@ -59,3 +59,17 @@ C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEt
 C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.exe
 C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.pdb
 C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\bin\Debug\ProCol.exe.config
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csprojResolveAssemblyReference.cache
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csproj.ResolveComReference.cache
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.FormFiltreÉlaboré.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.OpenFile.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.SauFormFiltreElabore.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.SauFormFiltreSimple.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.Start.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.Properties.Resources.resources
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\AnalyseEtControleFEC.csproj.GenerateResource.Cache
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.exe
+C:\Users\Cyril\Documents\Visual Studio 2015\Projects\ProjetCollectifAJour\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.pdb
+E:\Users\Cyril\Documents\CibleExecProjCol\ProCol.exe.config
+E:\Users\Cyril\Documents\CibleExecProjCol\ProCol.exe
+E:\Users\Cyril\Documents\CibleExecProjCol\ProCol.pdb

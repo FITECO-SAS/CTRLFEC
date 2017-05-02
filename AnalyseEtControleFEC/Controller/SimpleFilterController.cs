@@ -60,21 +60,21 @@ namespace AnalyseEtControleFEC.Controller
                     columnNameInDb = i.ToString();
             }
 
-            string result = " WHERE Column = " + columnNameInDb;
+            string result = " b.Column = " + columnNameInDb;
             switch (typeFilter)
             {
                 case "Est supérieur à":
-                    return result+" AND Content > " + value;
+                    return result+" AND b.Content > " + value;
                 case "Est supérieur ou égal à":
-                    return result + " AND Content >= " + value;
+                    return result + " AND b.Content >= " + value;
                 case "Est inférieur à":
-                    return result + " AND Content < " + value;
+                    return result + " AND b.Content < " + value;
                 case "Est inférieur ou égal à":
-                    return result + " AND Content <= " + value;
+                    return result + " AND b.Content <= " + value;
                 case "Est égal à":
-                    return result + " AND Content = " + value;
+                    return result + " AND b.Content = " + value;
                 case "Est différent de":
-                    return result + " AND Content <> " + value;
+                    return result + " AND b.Content <> " + value;
                 default:
                     return result + "";
 
@@ -91,25 +91,25 @@ namespace AnalyseEtControleFEC.Controller
                     columnNameInDb = i.ToString();
             }
 
-            string result = " WHERE Column = " + columnNameInDb;
+            string result = " b.Column = " + columnNameInDb;
             switch (typeFilter)
             {
                 case "Contient":
-                    return result + " AND Content "+"LIKE '" + "%" + value + "%" + "'";
+                    return result + " AND b.Content "+"LIKE '" + "%" + value + "%" + "'";
                 case "Ne contient pas":
-                    return result + " AND Content "+"NOT" + " LIKE '" + "%" + value + "%"+ "'";
+                    return result + " AND b.Content "+"NOT" + " LIKE '" + "%" + value + "%"+ "'";
                 case "Commence par":
-                    return result + " AND Content "+" LIKE '" + value + "%" + "'";
+                    return result + " AND b.Content "+" LIKE '" + value + "%" + "'";
                 case "Ne commence pas par":
-                    return result + " AND Content " + " NOT" +" LIKE '" + value + "%" + "'";
+                    return result + " AND b.Content " + " NOT" +" LIKE '" + value + "%" + "'";
                 case "Se termine par":
-                    return result + " AND Content " + " LIKE '" + "%" + value + "'";
+                    return result + " AND b.Content " + " LIKE '" + "%" + value + "'";
                 case "Ne se termine pas par":
-                    return result + " AND Content " + " NOT" + " LIKE '" + "%" + value + "'";
+                    return result + " AND b.Content " + " NOT" + " LIKE '" + "%" + value + "'";
                 case "Est égal à":
-                    return result + " AND Content " + " LIKE '" + value + "'";
+                    return result + " AND b.Content " + " LIKE '" + value + "'";
                 case "Est différent de":
-                    return result + " AND Content " + " NOT" + " LIKE '" + value + "'";
+                    return result + " AND b.Content " + " NOT" + " LIKE '" + value + "'";
                 default:
                     return result ;
             }
