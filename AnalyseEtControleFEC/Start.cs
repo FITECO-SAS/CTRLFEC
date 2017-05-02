@@ -1,4 +1,5 @@
 ﻿using AnalyseEtControleFEC.Controller;
+using ProCol;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,7 +68,14 @@ namespace AnalyseEtControleFEC
         private void dataGridView1_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
             MainController controller = MainController.get();
-            e.Value = controller.dataBaseController.getContentFromFilter(e.ColumnIndex, e.RowIndex);
+            if(sender is DataGridViewBDD)
+            {
+                e.Value = controller.dataBaseController.getContentFromFilter(e.ColumnIndex, e.RowIndex, ((DataGridViewBDD)sender).numGridView);
+            }
+            else
+            {
+                e.Value = controller.dataBaseController.getContent(e.ColumnIndex, e.RowIndex);
+            }       
         }
 
         internal DataGridView getDataGridView()
@@ -216,11 +224,12 @@ namespace AnalyseEtControleFEC
             // Si l'on décommente cette ligne, le résultat de mon test devrai apparaitre mais une erreur apparaît dans le traitement de DataBaseControler.
             string title = "tabPage" + (tabControl1.TabCount + 1).ToString();
             TabPage myTabPage = new TabPage(title);
-            DataGridView newDataGridVew = new DataGridView();
-            newDataGridVew.Size = dataGridView1.Size;
             controller.dataBaseController.AddFilter(finalWhereClause);
-            MainController.get().openFilter(newDataGridVew);
-            myTabPage.Controls.Add(newDataGridVew);
+            DataGridViewBDD newDataGridView = new DataGridViewBDD(controller.getDataBaseController().getLastFilterId());
+            newDataGridView.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(dataGridView1_CellValueNeeded);
+            newDataGridView.Size = dataGridView1.Size;
+            MainController.get().openFilter(newDataGridView);
+            myTabPage.Controls.Add(newDataGridView);
             tabControl1.TabPages.Add(myTabPage);
             tabControl1.SelectedTab = myTabPage;
             panel1.Visible = false;

@@ -55,6 +55,14 @@ namespace AnalyseEtControleFEC.Controller
             //dbConnection.Close();
         }
 
+        internal object getContentFromFilter(int column, int line, int filterNumber)
+        {
+            SQLiteCommand command = new SQLiteCommand("SELECT Content FROM Filter"+filterNumber+" WHERE Column = @column LIMIT 1 OFFSET @line", dbConnection);
+            command.Parameters.Add(new SQLiteParameter("@line", line));
+            command.Parameters.Add(new SQLiteParameter("@column", column));
+            return (String)command.ExecuteScalar();
+        }
+
 
         /// <summary>
         /// Fill the dataBase by reading an Accounting Entry File
@@ -150,6 +158,14 @@ namespace AnalyseEtControleFEC.Controller
             return (String)command.ExecuteScalar();
         }
 
+        public String getContent(int column, int line)
+        {
+            SQLiteCommand command = new SQLiteCommand("SELECT Content FROM Content WHERE Column = @column LIMIT 1 OFFSET @line", dbConnection);
+            command.Parameters.Add(new SQLiteParameter("@line", line));
+            command.Parameters.Add(new SQLiteParameter("@column", column));
+            return (String)command.ExecuteScalar();
+        }
+
         /// <summary>
         /// Add a filter using the restriction parameter for adding ORDER BY or WHERE clause
         /// </summary>
@@ -187,6 +203,11 @@ namespace AnalyseEtControleFEC.Controller
             }
             new SQLiteCommand("DROP VIEW FinalFilter", dbConnection).ExecuteNonQuery();
             new SQLiteCommand("CREATE TEMP VIEW FinalFilter AS Select * FROM Content", dbConnection).ExecuteNonQuery();
+        }
+
+        internal int getLastFilterId()
+        {
+            return FilterNumber-1;
         }
 
         public String[][] getAllLines()
