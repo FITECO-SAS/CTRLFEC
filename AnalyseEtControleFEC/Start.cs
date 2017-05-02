@@ -118,12 +118,7 @@ namespace AnalyseEtControleFEC
                 "Ne commence pas par","Se termine par","Ne se termine pas par","Est égal à","Est différent de" });
             }
         }
-        /*private void dataGridView2_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
-        {
-            MainController controller = MainController.get();
-            e.Value = controller.dataBaseController.getContentFromFilter(e.ColumnIndex, e.RowIndex);
-        }
-        */
+
         private void button3_Click(object sender, EventArgs e)
         {
             ExportFile exportFile = new ExportFile();
@@ -219,7 +214,16 @@ namespace AnalyseEtControleFEC
             }
             Console.WriteLine(finalWhereClause);
             // Si l'on décommente cette ligne, le résultat de mon test devrai apparaitre mais une erreur apparaît dans le traitement de DataBaseControler.
+            string title = "tabPage" + (tabControl1.TabCount + 1).ToString();
+            TabPage myTabPage = new TabPage(title);
+            DataGridView newDataGridVew = new DataGridView();
+            newDataGridVew.Size = dataGridView1.Size;
             controller.dataBaseController.AddFilter(finalWhereClause);
+            MainController.get().openFilter(newDataGridVew);
+            myTabPage.Controls.Add(newDataGridVew);
+            tabControl1.TabPages.Add(myTabPage);
+            tabControl1.SelectedTab = myTabPage;
+            panel1.Visible = false;
         }
     }
 }

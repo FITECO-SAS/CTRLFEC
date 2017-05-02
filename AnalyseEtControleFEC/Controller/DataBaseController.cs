@@ -157,17 +157,22 @@ namespace AnalyseEtControleFEC.Controller
         public void AddFilter (String restriction)
         {
             SQLiteCommand filter;
+            SQLiteCommand columnNum;
             if (FilterNumber == 0)
             {
-                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Content base "+restriction,dbConnection);
+                columnNum = new SQLiteCommand("CREATE TEMP VIEW ColumnNum" + FilterNumber + " AS SELECT DISTINCT Line FROM Content base " + restriction, dbConnection);
+                columnNum.ExecuteNonQuery();
+                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Line, Column, Content FROM Content base WHERE Line IN (SELECT Line FROM ColumnNum" + FilterNumber + ")",dbConnection);
             }
             else
             {
-                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Content FROM Filter" + (FilterNumber - 1) + " base " + restriction,dbConnection);
+                columnNum = new SQLiteCommand("CREATE TEMP VIEW ColumnNum" + FilterNumber + " AS SELECT DISTINCT Line FROM Content base " + restriction, dbConnection);
+                columnNum.ExecuteNonQuery();
+                filter = new SQLiteCommand("CREATE TEMP VIEW Filter" + FilterNumber + " AS SELECT Line, Column, Content FROM Filter" + (FilterNumber - 1) + " base WHERE Line IN (SELECT Line FROM ColumnNum" + FilterNumber + ")", dbConnection);
             }
             filter.ExecuteNonQuery();
             new SQLiteCommand("DROP VIEW FinalFilter", dbConnection).ExecuteNonQuery();
-            new SQLiteCommand("CREATE TEMP VIEW FinalFilter AS SELECT * FROM Filter"+FilterNumber, dbConnection).ExecuteNonQuery();
+            new SQLiteCommand("CREATE TEMP VIEW FinalFilter AS SELECT * FROM Filter" + FilterNumber, dbConnection).ExecuteNonQuery();
             FilterNumber++;
         }
 

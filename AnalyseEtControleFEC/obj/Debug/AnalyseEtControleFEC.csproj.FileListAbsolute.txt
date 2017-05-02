@@ -59,3 +59,5 @@ C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEt
 C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.exe
 C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\obj\Debug\ProCol.pdb
 C:\Users\Sciencus\Documents\Visual Studio 2015\Projects\Fiteco\CTRLFEC\AnalyseEtControleFEC\bin\Debug\ProCol.exe.config
+C:\Users\Pierre\Documents\CTRLFEC\AnalyseEtControleFEC\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pierre\Documents\CTRLFEC\AnalyseEtControleFEC\bin\Debug\System.Data.SQLite.dll

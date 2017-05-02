@@ -91,5 +91,17 @@ namespace AnalyseEtControleFEC.Controller
             gridView.Columns = content.ToArray()[0];*/
 
         }
+
+        internal void openFilter(DataGridView gridView)
+        {
+            String[] Columns = dataBaseController.getColumnNames();
+            int size = dataBaseController.getNumberOfLinesInFilter();
+            gridView.ColumnCount = Columns.Length;
+            for (int i = 0; i < Columns.Length; i++)
+            {
+                gridView.Columns[i].Name = Columns[i];
+            }
+            gridView.RowCount = size;
+        }
     }
 }
